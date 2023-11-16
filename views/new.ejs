@@ -1,0 +1,25 @@
+<%- include('partials/header'); -%>
+
+<div class="container p-5">
+  <a href="/workouts" class="btn btn-dark"><i class="fa-solid fa-chevron-left"></i></a>
+    <div class="text-center pb-4">
+        <h1>Create New Workout</h1>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-9 col-lg-7">
+            <form action="/workouts" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Title</label>
+                  <input type="text" name="title" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Description</label>
+                  <textarea type="text" name="description" class="form-control form-control-lg" id="exampleInputPassword1" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>

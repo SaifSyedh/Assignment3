@@ -1,0 +1,27 @@
+<%- include('partials/header'); -%>
+
+    <div class="container my-4">
+        <%- include('partials/error'); -%>
+            <a href="/workouts" class="btn btn-dark"><i class="fa-solid fa-chevron-left"></i></a>
+            <a href="/workouts/<%= workout.id %>/edit" class="btn btn-dark float-end">
+                <i class="fas fa-pen fa-xs"></i>
+            </a>
+            <form class="d-inline float-end me-2" id="delete" action="/workouts/<%= workout.id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger" type="submit"><i class="fas fa-trash fa-xs"></i></button>
+            </form>
+            <div class="p-5 mb-4 rounded-3">
+                <div class="container-fluid">
+                    <h1 class="display-5 fw-bold">
+                        <%= workout.title %>
+                    </h1>
+                    <label for="">Create at <b>
+                            <%= workout.created.toUTCString() %>
+                        </b></label>
+                    <p class="col-md-8 fs-4 my-4">
+                        <%= workout.description %>
+                    </p>
+                </div>
+            </div>
+    </div>
+
+    <%- include('partials/footer'); -%>
